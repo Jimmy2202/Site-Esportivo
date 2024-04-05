@@ -26,6 +26,10 @@ header {
     padding: 2rem;
 }
 
+.mobile_nav{
+    display: none;
+}
+
 .nav_principal{
     display: flex;
     justify-content:space-between;
@@ -35,6 +39,8 @@ header {
 
 .menu{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu a{
@@ -378,6 +384,25 @@ header {
     transform: scale(1.3);
 }
 
+.dropdow_mobile button{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    font-size: 7px;
+    border: none;
+    width: 10vw;
+    height: 1vh;
+    transition: 2s;
+}
+
+.dropdow_mobile button:hover{
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    font-weight: 800;
+}
+
 @media screen and (max-width:800px) {
     .slide_container{
         width: 90%;
@@ -467,7 +492,7 @@ header {
     }
 }
 
-@media screen and (max-width: 365px){
+@media screen and (max-width: 800px){
 
     .logotipo{
         transform: scale(0.4);
@@ -494,9 +519,51 @@ header {
     }
 }
 
+.dropdown_options1{
+    display: none;
+}
+
+.dropdown_options1 a{
+    font-size: 5px;
+    text-decoration-line: none;
+    color: white;
+    font-weight: 200;
+    margin: 3px;
+}
+
+.dropdown_options2{
+    display: none;
+}
+
+.dropdown_options2 a{
+    font-size: 5px;
+    text-decoration-line: none;
+    color: white;
+    font-weight: 200;
+    margin: 3px;
+}
+
 @media screen and (max-width: 400px){
     .nav_principal{
-        display:flex;
+        display:none;
+    }
+
+    .mobile_nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .dropdow_mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 4vh;
+    }
+
+    .dropdow_mobile button{
+        height: 2vh;
+        margin: 10px;
     }
 
     .nav_principal .menu{
@@ -515,13 +582,9 @@ header {
         font-weight: 800;
     }
 
-    .menu ul li div{
-        transform: scale(0.8);
-        margin: 10px;
-    } 
-
     .carrinho{
-        transform: scale(0.6);
+        font-size: 8px;
+        transform: scale(0.7);
     }
 
     .texto_selecionado{
