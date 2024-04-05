@@ -1,9 +1,27 @@
 let mainsection = document.querySelector('#section_main')
 let preco = document.querySelector('.precoh1')
-let car = document.querySelector('.texto_carrinho')
+let car = document.querySelectorAll('.texto_carrinho')
+let btn1 = document.querySelector('.option_btn1')
+let btn2 = document.querySelector('.option_btn2')
 let qtd = 0, total = 0
 let botoesremove = []
 let carrinho = []
+
+btn1.addEventListener('click', () =>{
+    if(document.querySelector('.dropdown_options1').style.display === "none" || document.querySelector('.dropdown_options1').style.display === "none"){
+        document.querySelector('.dropdown_options1').style.display = "flex"
+    }else{
+        document.querySelector('.dropdown_options1').style.display = "none"
+    }
+})
+
+btn2.addEventListener('click', () =>{
+    if(document.querySelector('.dropdown_options2').style.display === "none" || document.querySelector('.dropdown_options2').style.display === "none"){
+        document.querySelector('.dropdown_options2').style.display = "flex"
+    }else{
+        document.querySelector('.dropdown_options2').style.display = "none"
+    }
+})
 
 if (JSON.parse(localStorage.getItem('carrinho')) != null) {
     carrinho = JSON.parse(localStorage.getItem('carrinho'))
@@ -43,12 +61,12 @@ function show_items() {
 
         if (element.tipo == "roupa") {
             let str = `<h2>${element.nome}</h2><br><h2>Tamanho: ${element.tamanho}</h2><br><h2>Cor: ${element.cor}</h2><br><h2>Quantidade disponível: ${element.qtd}</h2><br>
-            <h1>PREÇO:R$ ${element.preco}`
+            <h1>PREÇO:R$ ${element.preco}</h1>`
             text.innerHTML = str
             text.appendChild(remove)
         } else if (element.tipo == "bola") {
             let str = `<h2>${element.nome}</h2><br><h2>Cor: ${element.cor}</h2><br><h2>Quantidade disponível: ${element.qtd}</h2><br>
-            <h1>PREÇO:R$ ${element.preco}`
+            <h1>PREÇO:R$ ${element.preco}</h1>`
             text.innerHTML = str
             text.appendChild(remove)
         }
@@ -68,10 +86,14 @@ function show_page() {
     botoesremove = document.querySelectorAll('.btn_remove')
     preco.textContent = `TOTAL:${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
     qtd = carrinho.length
-    car.textContent = `Carrinho(${qtd})`
+    car.forEach(element =>{
+        element.textContent = `Carrinho(${qtd})`
+    })
 }
 
 show_page()
 qtd = carrinho.length
-car.textContent = `Carrinho(${qtd})`
+car.forEach(element =>{
+    element.textContent = `Carrinho(${qtd})`
+})
 

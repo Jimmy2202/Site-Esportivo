@@ -1,10 +1,28 @@
 let productsdiv = document.querySelector('.products')
 let sessao = document.querySelector('#section_main2')
 let objeto_selecionado, qtd = 0
-let car = document.querySelector('.texto_carrinho')
+let car = document.querySelectorAll('.texto_carrinho')
 let comprar = document.createElement('button')
 let carrinho = []
 const image = new Image()
+let btn1 = document.querySelector('.option_btn1')
+let btn2 = document.querySelector('.option_btn2')
+
+btn1.addEventListener('click', () =>{
+    if(document.querySelector('.dropdown_options1').style.display === "none" || document.querySelector('.dropdown_options1').style.display === "none"){
+        document.querySelector('.dropdown_options1').style.display = "flex"
+    }else{
+        document.querySelector('.dropdown_options1').style.display = "none"
+    }
+})
+
+btn2.addEventListener('click', () =>{
+    if(document.querySelector('.dropdown_options2').style.display === "none" || document.querySelector('.dropdown_options2').style.display === "none"){
+        document.querySelector('.dropdown_options2').style.display = "flex"
+    }else{
+        document.querySelector('.dropdown_options2').style.display = "none"
+    }
+})
 
 let produtos = [
     {
@@ -215,7 +233,9 @@ if (carrinho.length != 0) {
     qtd = carrinho.length
 }
 
-car.textContent = `Carrinho(${qtd})`
+car.forEach(element =>{
+    element.textContent = `Carrinho(${qtd})`
+})
 
 function getParameterURL(nome) {
     const parametrosUrl = new URLSearchParams(window.location.search)
