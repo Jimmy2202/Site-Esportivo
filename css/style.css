@@ -23,6 +23,7 @@ main{
 header {
     background-color: rgba(0, 0, 0, 0.534);
     backdrop-filter: blur(4px);
+    padding: 2rem;
 }
 
 .nav_principal{
@@ -381,7 +382,7 @@ header {
         background-color: rgb(255, 81, 0);
         box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.301);
         color: white;
-        font-weight: ;
+        font-weight: 500;
         transition: .4s;
     }
 
@@ -436,6 +437,14 @@ header {
     .buttons button{
         width: 10vw;
     }
+
+    .carrinho{
+        transform: scale(0.4);
+    }
+
+    .texto_selecionado {
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 365px){
@@ -444,6 +453,9 @@ header {
         transform: scale(0.4);
     }
 
+    header{
+        padding: 0;
+    }
 
     .nav_principal .menu{
         font-size: 8px;
@@ -451,5 +463,13 @@ header {
 
     .carrinho{
         transform: scale(0.4);
+    }
+
+    .texto_selecionado {
+        width: 95%;
+    }
+
+    .texto_selecionado button{
+        transform: scale(0.6);
     }
 }
