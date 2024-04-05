@@ -23,7 +23,6 @@ main{
 header {
     background-color: rgba(0, 0, 0, 0.534);
     backdrop-filter: blur(4px);
-    padding: 2rem;
 }
 
 .nav_principal{
@@ -236,19 +235,6 @@ header {
     height: 40vh;
 }
 
-.btn_compra{
-    width: 10%;
-    height: 10%;
-    margin: 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: rgb(255, 81, 0);
-    box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.301);
-    color: white;
-    font-weight: 800;
-    transition: .4s;
-}
-
 .btn_compra:hover{
     transform: scale(1.1);
     cursor: pointer;
@@ -386,6 +372,19 @@ header {
         box-shadow: none;
     }
 
+    .btn_compra{
+        width: 30%;
+        height: 10%;
+        margin: 5px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(255, 81, 0);
+        box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.301);
+        color: white;
+        font-weight: ;
+        transition: .4s;
+    }
+
     .carrossel{
         width: 95vw;
         height: 50vh;
@@ -436,5 +435,21 @@ header {
 
     .buttons button{
         width: 10vw;
+    }
+}
+
+@media screen and (max-width: 365px){
+
+    .logotipo{
+        transform: scale(0.4);
+    }
+
+
+    .nav_principal .menu{
+        font-size: 8px;
+    }
+
+    .carrinho{
+        transform: scale(0.4);
     }
 }
